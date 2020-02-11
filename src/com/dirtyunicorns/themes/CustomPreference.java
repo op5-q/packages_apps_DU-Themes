@@ -21,7 +21,7 @@ import android.util.AttributeSet;
 
 import androidx.preference.Preference;
 
-import com.android.internal.util.pixeldust.PixeldustUtils;
+import com.android.internal.util.nitrogen.NitrogenUtils;
 
 public class CustomPreference extends Preference {
 
@@ -46,11 +46,11 @@ public class CustomPreference extends Preference {
     }
 
     private void setResources() {
-        if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
+        if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
             setLayoutResource(R.layout.themes_main_filled);
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
             setLayoutResource(R.layout.themes_main_rounded);
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
             setLayoutResource(R.layout.themes_main_circular);
         } else {
             setLayoutResource(R.layout.themes_main);

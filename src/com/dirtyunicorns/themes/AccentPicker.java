@@ -39,7 +39,7 @@ import android.widget.Button;
 import androidx.preference.PreferenceManager;
 
 import com.android.internal.util.pixeldust.ThemesUtils;
-import com.android.internal.util.pixeldust.PixeldustUtils;
+import com.android.internal.util.nitrogen.NitrogenUtils;
 
 public class AccentPicker extends DialogFragment {
 

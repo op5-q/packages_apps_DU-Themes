@@ -165,7 +165,7 @@ public class Utils {
     }
 
     public static void setForegroundDrawable(String packagename, Button buttonAccent, Activity activity) {
-        if (com.android.internal.util.pixeldust.PixeldustUtils.isThemeEnabled(packagename)) {
+        if (com.android.internal.util.nitrogen.NitrogenUtils.isThemeEnabled(packagename)) {
             buttonAccent.setForeground(activity.getResources().getDrawable(
                     R.drawable.accent_picker_checkmark, null));
         } else {
