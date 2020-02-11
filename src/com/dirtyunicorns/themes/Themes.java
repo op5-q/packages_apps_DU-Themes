@@ -50,7 +50,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 
-import com.android.internal.util.pixeldust.PixeldustUtils;
+import com.android.internal.util.nitrogen.NitrogenUtils;
 import com.android.internal.util.pixeldust.ThemesUtils;
 
 import com.dirtyunicorns.themes.db.ThemeDatabase;
@@ -209,9 +209,9 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
         // Themes
         mThemeSwitch = (ListPreference) findPreference(PREF_THEME_SWITCH);
-        if (PixeldustUtils.isThemeEnabled("com.android.theme.solarizeddark.system")) {
+        if (NitrogenUtils.isThemeEnabled("com.android.theme.solarizeddark.system")) {
             mThemeSwitch.setValue("4");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.pitchblack.system")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.pitchblack.system")) {
             mThemeSwitch.setValue("3");
         } else if (mUiModeManager != null) {
             if (mUiModeManager.getNightMode() == UiModeManager.MODE_NIGHT_YES) {
@@ -224,37 +224,37 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
         // Font picker
         mFontPicker = (ListPreference) findPreference(PREF_FONT_PICKER);
-        if (PixeldustUtils.isThemeEnabled("com.android.theme.font.notoserifsource")) {
+        if (NitrogenUtils.isThemeEnabled("com.android.theme.font.notoserifsource")) {
             mFontPicker.setValue("2");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.aclonicasource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.aclonicasource")) {
             mFontPicker.setValue("3");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.amarantesource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.amarantesource")) {
             mFontPicker.setValue("4");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.bariolsource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.bariolsource")) {
             mFontPicker.setValue("5");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.cagliostrosource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.cagliostrosource")) {
             mFontPicker.setValue("6");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.comicsanssource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.comicsanssource")) {
             mFontPicker.setValue("7");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.coolstorysource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.coolstorysource")) {
             mFontPicker.setValue("8");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.firasans")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.firasans")) {
             mFontPicker.setValue("9");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.googlesans")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.googlesans")) {
             mFontPicker.setValue("10");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.lgsmartgothicsource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.lgsmartgothicsource")) {
             mFontPicker.setValue("11");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.oneplusslate")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.oneplusslate")) {
             mFontPicker.setValue("12");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.rosemarysource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.rosemarysource")) {
             mFontPicker.setValue("13");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.samsungone")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.samsungone")) {
             mFontPicker.setValue("14");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.sanfrancisco")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.sanfrancisco")) {
             mFontPicker.setValue("15");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.sonysketchsource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.sonysketchsource")) {
             mFontPicker.setValue("16");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.font.surfersource")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.font.surfersource")) {
             mFontPicker.setValue("17");
         } else {
             mFontPicker.setValue("1");
@@ -263,15 +263,15 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
         // Adaptive icon shape
         mAdaptiveIconShape = (ListPreference) findPreference(PREF_ADAPTIVE_ICON_SHAPE);
-        if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.teardrop")) {
+        if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.teardrop")) {
             mAdaptiveIconShape.setValue("2");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.squircle")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.squircle")) {
             mAdaptiveIconShape.setValue("3");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.roundedrect")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.roundedrect")) {
             mAdaptiveIconShape.setValue("4");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.cylinder")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.cylinder")) {
             mAdaptiveIconShape.setValue("5");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.hexagon")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.hexagon")) {
             mAdaptiveIconShape.setValue("6");
         } else {
             mAdaptiveIconShape.setValue("1");
@@ -280,11 +280,11 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
         // Statusbar icons
         mStatusbarIcons = (ListPreference) findPreference(PREF_STATUSBAR_ICONS);
-        if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
+        if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
             mStatusbarIcons.setValue("2");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
             mStatusbarIcons.setValue("3");
-        } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
+        } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
             mStatusbarIcons.setValue("4");
         } else {
             mStatusbarIcons.setValue("1");
@@ -342,52 +342,52 @@ public class Themes extends PreferenceFragment implements ThemesListener {
                 protected void onPreExecute() {
                     super.onPreExecute();
                     String font_type = sharedPreferences.getString(PREF_FONT_PICKER, "1");
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.notoserifsource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.notoserifsource")) {
                         handleOverlays("com.android.theme.font.notoserifsource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.aclonicasource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.aclonicasource")) {
                         handleOverlays("com.android.theme.font.aclonicasource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.amarantesource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.amarantesource")) {
                         handleOverlays("com.android.theme.font.amarantesource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.bariolsource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.bariolsource")) {
                         handleOverlays("com.android.theme.font.bariolsource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.cagliostrosource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.cagliostrosource")) {
                         handleOverlays("com.android.theme.font.cagliostrosource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.comicsanssource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.comicsanssource")) {
                         handleOverlays("com.android.theme.font.comicsanssource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.coolstorysource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.coolstorysource")) {
                         handleOverlays("com.android.theme.font.coolstorysource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.firasans")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.firasans")) {
                         handleOverlays("com.android.theme.font.firasans", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.googlesans")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.googlesans")) {
                         handleOverlays("com.android.theme.font.googlesans", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.lgsmartgothicsource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.lgsmartgothicsource")) {
                         handleOverlays("com.android.theme.font.lgsmartgothicsource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.oneplusslate")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.oneplusslate")) {
                         handleOverlays("com.android.theme.font.oneplusslate", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.rosemarysource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.rosemarysource")) {
                         handleOverlays("com.android.theme.font.rosemarysource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.samsungone")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.samsungone")) {
                         handleOverlays("com.android.theme.font.samsungone", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.sanfrancisco")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.sanfrancisco")) {
                         handleOverlays("com.android.theme.font.sanfrancisco", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.sonysketchsource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.sonysketchsource")) {
                         handleOverlays("com.android.theme.font.sonysketchsource", false, mOverlayManager);
                     }
-                    if (PixeldustUtils.isThemeEnabled("com.android.theme.font.surfersource")) {
+                    if (NitrogenUtils.isThemeEnabled("com.android.theme.font.surfersource")) {
                         handleOverlays("com.android.theme.font.surfersource", false, mOverlayManager);
                     }
                     switch (font_type) {
@@ -606,89 +606,89 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
     private void updateAccentSummary() {
         if (mAccentPicker != null) {
-            if (PixeldustUtils.isThemeEnabled("com.android.theme.color.space")) {
+            if (NitrogenUtils.isThemeEnabled("com.android.theme.color.space")) {
                 mAccentPicker.setSummary("Space");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.purple")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.purple")) {
                 mAccentPicker.setSummary("Purple");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.orchid")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.orchid")) {
                 mAccentPicker.setSummary("Orchid");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.ocean")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.ocean")) {
                 mAccentPicker.setSummary("Ocean");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.green")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.green")) {
                 mAccentPicker.setSummary("Green");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.cinnamon")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.cinnamon")) {
                 mAccentPicker.setSummary("Cinnamon");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.amber")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.amber")) {
                 mAccentPicker.setSummary("Amber");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.blue")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.blue")) {
                 mAccentPicker.setSummary("Blue");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.bluegrey")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.bluegrey")) {
                 mAccentPicker.setSummary("Blue Grey");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.brown")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.brown")) {
                 mAccentPicker.setSummary("Brown");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.cyan")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.cyan")) {
                 mAccentPicker.setSummary("Cyan");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.deeporange")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.deeporange")) {
                 mAccentPicker.setSummary("Deep Orange");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.deeppurple")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.deeppurple")) {
                 mAccentPicker.setSummary("Deep Purple");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.grey")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.grey")) {
                 mAccentPicker.setSummary("Grey");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.indigo")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.indigo")) {
                 mAccentPicker.setSummary("Indigo");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.lightblue")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.lightblue")) {
                 mAccentPicker.setSummary("Light Blue");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.lightgreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.lightgreen")) {
                 mAccentPicker.setSummary("Light Green");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.lime")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.lime")) {
                 mAccentPicker.setSummary("Lime");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.orange")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.orange")) {
                 mAccentPicker.setSummary("Orange");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.pink")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.pink")) {
                 mAccentPicker.setSummary("Pink");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.red")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.red")) {
                 mAccentPicker.setSummary("Red");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.teal")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.teal")) {
                 mAccentPicker.setSummary("Teal");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.yellow")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.yellow")) {
                 mAccentPicker.setSummary("Yellow");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.androidonegreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.androidonegreen")) {
                 mAccentPicker.setSummary("AndroidOneGreen");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.cocacolared")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.cocacolared")) {
                 mAccentPicker.setSummary("CocaColaRed");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.discordpurple")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.discordpurple")) {
                 mAccentPicker.setSummary("DiscordPurple");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.facebookblue")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.facebookblue")) {
                 mAccentPicker.setSummary("FacebookBlue");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.instagramcerise")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.instagramcerise")) {
                 mAccentPicker.setSummary("InstagramCerise");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.jollibeecrimson")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.jollibeecrimson")) {
                 mAccentPicker.setSummary("JollibeeCrimson");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.monsterenergygreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.monsterenergygreen")) {
                 mAccentPicker.setSummary("MonsterEnergyGreen");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.nextbitmint")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.nextbitmint")) {
                 mAccentPicker.setSummary("NextbitMint");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.oneplusred")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.oneplusred")) {
                 mAccentPicker.setSummary("OneplusRed");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.pepsiblue")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.pepsiblue")) {
                 mAccentPicker.setSummary("PepsiBlue");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.pocophoneyellow")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.pocophoneyellow")) {
                 mAccentPicker.setSummary("PocophoneYellow");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.razergreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.razergreen")) {
                 mAccentPicker.setSummary("RazerGreen");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.samsungblue")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.samsungblue")) {
                 mAccentPicker.setSummary("SamsungBlue");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.spotifygreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.spotifygreen")) {
                 mAccentPicker.setSummary("SpotifyGreen");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.starbucksgreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.starbucksgreen")) {
                 mAccentPicker.setSummary("StarbucksGreen");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.twitchpurple")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.twitchpurple")) {
                 mAccentPicker.setSummary("TwitchPurple");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.twitterblue")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.twitterblue")) {
                 mAccentPicker.setSummary("TwitterBlue");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.xboxgreen")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.xboxgreen")) {
                 mAccentPicker.setSummary("XboxGreen");
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.color.xiaomiorange")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.color.xiaomiorange")) {
                 mAccentPicker.setSummary("XiaomiOrange");
             } else {
                 mAccentPicker.setSummary(mContext.getString(R.string.theme_accent_picker_default));
@@ -698,15 +698,15 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
     private void updateIconShapeSummary() {
         if (mAdaptiveIconShape != null) {
-            if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.teardrop")) {
+            if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.teardrop")) {
                 mAdaptiveIconShape.setSummary(getString(R.string.adaptive_icon_shape_teardrop));
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.squircle")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.squircle")) {
                 mAdaptiveIconShape.setSummary(getString(R.string.adaptive_icon_shape_squircle));
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.roundedrect")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.roundedrect")) {
                 mAdaptiveIconShape.setSummary(getString(R.string.adaptive_icon_shape_roundedrect));
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.cylinder")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.cylinder")) {
                 mAdaptiveIconShape.setSummary(getString(R.string.adaptive_icon_shape_cylinder));
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon.hexagon")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon.hexagon")) {
                 mAdaptiveIconShape.setSummary(getString(R.string.adaptive_icon_shape_hexagon));
             } else {
                 mAdaptiveIconShape.setSummary(mContext.getString(R.string.adaptive_icon_shape_default));
@@ -716,11 +716,11 @@ public class Themes extends PreferenceFragment implements ThemesListener {
 
     private void updateStatusbarIconsSummary() {
         if (mStatusbarIcons != null) {
-            if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
+            if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
                 mStatusbarIcons.setSummary(getString(R.string.statusbar_icons_filled));
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
                 mStatusbarIcons.setSummary(getString(R.string.statusbar_icons_rounded));
-            } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
+            } else if (NitrogenUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
                 mStatusbarIcons.setSummary(getString(R.string.statusbar_icons_circular));
             } else {
                 mStatusbarIcons.setSummary(mContext.getString(R.string.statusbar_icons_default));
