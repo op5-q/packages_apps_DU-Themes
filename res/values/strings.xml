@@ -68,6 +68,50 @@
     <string name="statusbar_icons_title">Statusbar/QS icons</string>
     <string name="statusbar_icons_dialog_title">Select statusbar icon set</string>
 
+    <!-- Accents -->
+    <string name="accent_colors_space">Space</string>
+    <string name="accent_colors_purple">Purple</string>
+    <string name="accent_colors_orchid">Orchid</string>
+    <string name="accent_colors_ocean">Ocean</string>
+    <string name="accent_colors_green">Green</string>
+    <string name="accent_colors_cinnamon">Cinnamon</string>
+    <string name="accent_colors_amber">Amber</string>
+    <string name="accent_colors_blue">Blue</string>
+    <string name="accent_colors_bluegrey">Blue Grey</string>
+    <string name="accent_colors_brown">Brown</string>
+    <string name="accent_colors_cyan">Cyan</string>
+    <string name="accent_colors_deeporange">Deep Orange</string>
+    <string name="accent_colors_deeppurple">Deep Purple</string>
+    <string name="accent_colors_grey">Grey</string>
+    <string name="accent_colors_indigo">Indigo</string>
+    <string name="accent_colors_lightblue">Light Blue</string>
+    <string name="accent_colors_lightgreen">Light Green</string>
+    <string name="accent_colors_lime">Lime</string>
+    <string name="accent_colors_orange">Orange</string>
+    <string name="accent_colors_pink">Pink</string>
+    <string name="accent_colors_red">Red</string>
+    <string name="accent_colors_teal">Teal</string>
+    <string name="accent_colors_yellow">Yellow</string>
+    <string name="accent_colors_androidonegreen">AndroidOneGreen</string>
+    <string name="accent_colors_cocacolared">CocaColaRed</string>
+    <string name="accent_colors_discordpurple">DiscordPurple</string>
+    <string name="accent_colors_facebookblue">FacebookBlue</string>
+    <string name="accent_colors_instagramcerise">InstagramCerise</string>
+    <string name="accent_colors_jollibeecrimson">JollibeeCrimson</string>
+    <string name="accent_colors_monsterenergygreen">MonsterEnergyGreen</string>
+    <string name="accent_colors_nextbitmint">NextbitMint</string>
+    <string name="accent_colors_oneplusred">OneplusRed</string>
+    <string name="accent_colors_pepsiblue">PepsiBlue</string>
+    <string name="accent_colors_pocophoneyellow">PocophoneYellow</string>
+    <string name="accent_colors_razergreen">RazerGreen</string>
+    <string name="accent_colors_samsungblue">SamsungBlue</string>
+    <string name="accent_colors_spotifygreen">SpotifyGreen</string>
+    <string name="accent_colors_starbucksgreen">StarbucksGreen</string>
+    <string name="accent_colors_twitchpurple">TwitchPurple</string>
+    <string name="accent_colors_twitterblue">TwitterBlue</string>
+    <string name="accent_colors_xboxgreen">XboxGreen</string>
+    <string name="accent_colors_xiaomiorange">XiaomiOrange</string>
+
     <!-- Themes -->
     <string name="theme_type_title">System theme</string>
     <string name="theme_type_summary">Select theme</string>
