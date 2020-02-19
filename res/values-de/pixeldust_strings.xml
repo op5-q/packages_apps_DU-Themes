@@ -80,8 +80,6 @@
     <string name="theme_backup_edittext_hint">Sicherung_</string>
     <string name="theme_backup_dialog_title">Live-Hintergrundbild erkannt</string>
     <string name="theme_backup_dialog_message">Es scheint, dass Sie ein Live-Hintergrundbild angewendet haben.\n\nBitte beachten Sie, dass Live-Hintergrundbilder nicht gesichert werden. Stattdessen wird das Standard-Hintergrundbild gesichert.</string>
-    <string name="theme_backup_dialog_positive">OK</string>
-    <string name="theme_backup_dialog_negative">Abbrechen</string>
 
     <!-- Theme schedule -->
     <string name="theme_schedule_title">Zeitplan</string>
