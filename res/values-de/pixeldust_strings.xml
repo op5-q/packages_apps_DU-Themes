@@ -18,6 +18,9 @@
 
     <string name="app_name">UI-Stil anpassen</string>
 
+    <!-- Footer -->
+    <string name="schedule_footer_info">Beachte beim Festlegen eines Zeitplans immer, dass der erste Zeitplan in der Zukunft liegen muss.\n\nZum Beispiel:\nWenn die aktuelle Zeit 16:00 Uhr ist und du einen Zeitplan von 6:00 bis 18:00 Uhr festlegen möchtest, dann stelle für den Zeitpunkt zum Wechseln des ersten UI-Stils 18:00 Uhr ein und für den zweiten 6:00 Uhr ein.</string>
+
     <!-- Accent Picker -->
     <string name="accent_picker_dialog_title">Akzentfarbe wählen</string>
     <string name="theme_accent_picker_title">Akzentfarbe</string>
@@ -80,6 +83,9 @@
     <string name="theme_backup_edittext_hint">Sicherung_</string>
     <string name="theme_backup_dialog_title">Live-Hintergrundbild erkannt</string>
     <string name="theme_backup_dialog_message">Es scheint, dass Sie ein Live-Hintergrundbild angewendet haben.\n\nBitte beachten Sie, dass Live-Hintergrundbilder nicht gesichert werden. Stattdessen wird das Standard-Hintergrundbild gesichert.</string>
+    <string name="theme_reset_dialog_title">Alle Stiländerungen zurücksetzen</string>
+    <string name="theme_reset_dialog_message">Alle Stiländerungen werden auf die jeweilige Standardeinstellung zurückgesetzt. Der Zeitplan ist davon nicht betroffen.</string>
+    <string name="theme_reset_toast">Stiländerungen auf Standard zurückgesetzt</string>
 
     <!-- Theme schedule -->
     <string name="theme_schedule_title">Zeitplan</string>
