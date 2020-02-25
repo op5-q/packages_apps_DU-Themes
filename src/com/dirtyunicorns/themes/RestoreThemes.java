@@ -19,12 +19,10 @@ package com.dirtyunicorns.themes;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.WallpaperManager;
-import android.content.om.IOverlayManager;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.ServiceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -49,9 +47,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.dirtyunicorns.themes.utils.Utils.enableAccentColor;
-import static com.dirtyunicorns.themes.utils.Utils.setDefaultAccentColor;
-
 public class RestoreThemes extends Activity implements CompoundButton.OnCheckedChangeListener {
 
     public static final String TAG_RESTORE_THEMES = "restore_themes";
@@ -59,7 +54,6 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
     private ArrayList<String> mSwitchList;
     private int mNumSwitches = 6;
     private int mSwitchId;
-    private IOverlayManager mOverlayManager;
     private LinearLayoutManager mLayoutManager;
     private List<ThemesListItem> mThemesList;
     private RecyclerView mThemesRecyclerView;
@@ -91,8 +85,6 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        mOverlayManager = IOverlayManager.Stub.asInterface(
-                    ServiceManager.getService(this.OVERLAY_SERVICE));
         mSwitchArray = new Switch[mNumSwitches];
         mSwitchList = new ArrayList<String>();
         for (int i = 0; i < mNumSwitches; i++) {
@@ -117,7 +109,6 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         mThemesRecyclerView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
             public void onScrollChanged() {
-
                 if (mThemesRecyclerView.canScrollHorizontally(1) &&
                         mThemesRecyclerView.computeHorizontalScrollRange() >= mThemesRecyclerView.getWidth()) {
                     mThemePopup.setVisibility(mSharedPreferences.getBoolean(
@@ -321,11 +312,8 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
     private void applyThemeAccent() {
         if (mAccentSwitch.isChecked()) {
             String newValue = mThemesList.get(getCurrentItem()).getAccentPicker();
-            if (newValue == "default") {
-                setDefaultAccentColor(mOverlayManager);
-            } else {
-                enableAccentColor(mOverlayManager, newValue);
-            }
+            mSharedPrefEditor.putString("theme_accent_color", newValue);
+            mSharedPrefEditor.apply();
         }
     }
 
