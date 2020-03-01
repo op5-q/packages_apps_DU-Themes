@@ -19,15 +19,16 @@ package com.dirtyunicorns.themes;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.WallpaperManager;
-import android.content.om.IOverlayManager;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.os.ServiceManager;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.RelativeLayout;
 import android.widget.Switch;
 
 import androidx.preference.PreferenceManager;
@@ -46,17 +47,17 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.dirtyunicorns.themes.utils.Utils.enableAccentColor;
-import static com.dirtyunicorns.themes.utils.Utils.setDefaultAccentColor;
-
-public class RestoreThemes extends Activity {
+public class RestoreThemes extends Activity implements CompoundButton.OnCheckedChangeListener {
 
     public static final String TAG_RESTORE_THEMES = "restore_themes";
 
-    private IOverlayManager mOverlayManager;
+    private ArrayList<String> mSwitchList;
+    private int mNumSwitches = 6;
+    private int mSwitchId;
     private LinearLayoutManager mLayoutManager;
     private List<ThemesListItem> mThemesList;
     private RecyclerView mThemesRecyclerView;
+    private RelativeLayout mThemePopup;
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mSharedPrefEditor;
     private ThemesAdapter mThemesAdapter;
@@ -65,6 +66,7 @@ public class RestoreThemes extends Activity {
 
     private Button mDeleteTheme;
     private Button mApplyTheme;
+    private Switch[] mSwitchArray;
     private Switch mThemeSwitch;
     private Switch mAccentSwitch;
     private Switch mFontSwitch;
@@ -83,8 +85,11 @@ public class RestoreThemes extends Activity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
-        mOverlayManager = IOverlayManager.Stub.asInterface(
-                    ServiceManager.getService(this.OVERLAY_SERVICE));
+        mSwitchArray = new Switch[mNumSwitches];
+        mSwitchList = new ArrayList<String>();
+        for (int i = 0; i < mNumSwitches; i++) {
+            mSwitchList.add("switch" + String.valueOf(i + 1));
+        }
         mThemesList = new ArrayList<>();
         mThemesAdapter = new ThemesAdapter(this, mThemesList);
         mThemeDatabase = new ThemeDatabase(this);
@@ -99,6 +104,27 @@ public class RestoreThemes extends Activity {
         mThemesRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mThemesRecyclerView.setNestedScrollingEnabled(true);
         mThemesRecyclerView.setAdapter(mThemesAdapter);
+
+        mThemePopup = findViewById(R.id.theme_popup);
+        mThemesRecyclerView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                if (mThemesRecyclerView.canScrollHorizontally(1) &&
+                        mThemesRecyclerView.computeHorizontalScrollRange() >= mThemesRecyclerView.getWidth()) {
+                    mThemePopup.setVisibility(mSharedPreferences.getBoolean(
+                            "ThemeReminder", true) ? View.VISIBLE : View.GONE);
+                    mThemePopup.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            mSharedPrefEditor.putBoolean("ThemeReminder", false).apply();
+                            mThemePopup.setVisibility(View.GONE);
+                        }
+                    });
+                } else {
+                    mThemePopup.setVisibility(View.GONE);
+                }
+            }
+        });
 
         mDeleteTheme = (Button) findViewById(R.id.deleteTheme);
         mDeleteTheme.setOnClickListener(new View.OnClickListener() {
@@ -123,26 +149,65 @@ public class RestoreThemes extends Activity {
         });
 
         mThemeSwitch = (Switch) findViewById(R.id.themeSwitch);
-        mThemeSwitch.setChecked(true);
+        mThemeSwitch.setOnCheckedChangeListener(this);
+        mThemeSwitch.setChecked(mSharedPreferences.getBoolean(mSwitchList.get(0), true));
 
         mAccentSwitch = (Switch) findViewById(R.id.accentSwitch);
-        mAccentSwitch.setChecked(true);
+        mAccentSwitch.setOnCheckedChangeListener(this);
+        mAccentSwitch.setChecked(mSharedPreferences.getBoolean(mSwitchList.get(1), true));
 
         mFontSwitch = (Switch) findViewById(R.id.fontSwitch);
-        mFontSwitch.setChecked(true);
+        mFontSwitch.setOnCheckedChangeListener(this);
+        mFontSwitch.setChecked(mSharedPreferences.getBoolean(mSwitchList.get(2), true));
 
         mIconShapeSwitch = (Switch) findViewById(R.id.iconShapeSwitch);
-        mIconShapeSwitch.setChecked(true);
+        mIconShapeSwitch.setOnCheckedChangeListener(this);
+        mIconShapeSwitch.setChecked(mSharedPreferences.getBoolean(mSwitchList.get(3), true));
 
         mSbIconSwitch = (Switch) findViewById(R.id.sbIconSwitch);
-        mSbIconSwitch.setChecked(true);
+        mSbIconSwitch.setOnCheckedChangeListener(this);
+        mSbIconSwitch.setChecked(mSharedPreferences.getBoolean(mSwitchList.get(4), true));
 
         mWpSwitch = (Switch) findViewById(R.id.wpSwitch);
-        mWpSwitch.setChecked(true);
+        mWpSwitch.setOnCheckedChangeListener(this);
+        mWpSwitch.setChecked(mSharedPreferences.getBoolean(mSwitchList.get(5), true));
 
         SnapHelper snapHelper = new PagerSnapHelper();
         snapHelper.attachToRecyclerView(mThemesRecyclerView);
         setThemesData();
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton switches, boolean isChecked) {
+        switch (switches.getId()) {
+            case R.id.themeSwitch:
+                mSwitchId = 0;
+                mSwitchArray[0] = mThemeSwitch;
+                break;
+            case R.id.accentSwitch:
+                mSwitchId = 1;
+                mSwitchArray[1] = mAccentSwitch;
+                break;
+            case R.id.fontSwitch:
+                mSwitchId = 2;
+                mSwitchArray[2] = mFontSwitch;
+                break;
+            case R.id.iconShapeSwitch:
+                mSwitchId = 3;
+                mSwitchArray[3] = mIconShapeSwitch;
+                break;
+            case R.id.sbIconSwitch:
+                mSwitchId = 4;
+                mSwitchArray[4] = mSbIconSwitch;
+                break;
+            case R.id.wpSwitch:
+                mSwitchId = 5;
+                mSwitchArray[5] = mWpSwitch;
+                break;
+        }
+        mSharedPrefEditor.putBoolean("switch" + String.valueOf(mSwitchId + 1),
+            mSwitchArray[mSwitchId].isChecked());
+        mSharedPrefEditor.commit();
     }
 
     @Override
@@ -247,11 +312,8 @@ public class RestoreThemes extends Activity {
     private void applyThemeAccent() {
         if (mAccentSwitch.isChecked()) {
             String newValue = mThemesList.get(getCurrentItem()).getAccentPicker();
-            if (newValue == "default") {
-                setDefaultAccentColor(mOverlayManager);
-            } else {
-                enableAccentColor(mOverlayManager, newValue);
-            }
+            mSharedPrefEditor.putString("theme_accent_color", newValue);
+            mSharedPrefEditor.apply();
         }
     }
 
@@ -312,4 +374,5 @@ public class RestoreThemes extends Activity {
         return false;
     }
 }
+
 

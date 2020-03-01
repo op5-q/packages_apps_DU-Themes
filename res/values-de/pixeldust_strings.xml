@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2020 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">UI-Stil anpassen</string>
+
+    <!-- Footer -->
+    <string name="schedule_footer_info">Beachte beim Festlegen eines Zeitplans immer, dass der erste Zeitplan in der Zukunft liegen muss.\n\nZum Beispiel:\nWenn die aktuelle Zeit 16:00 Uhr ist und du einen Zeitplan von 6:00 bis 18:00 Uhr festlegen möchtest, dann stelle für den Zeitpunkt zum Wechseln des ersten UI-Stils 18:00 Uhr ein und für den zweiten 6:00 Uhr ein.</string>
+
+    <!-- Accent Picker -->
+    <string name="accent_picker_dialog_title">Akzentfarbe wählen</string>
+    <string name="theme_accent_picker_title">Akzentfarbe</string>
+    <string name="theme_accent_picker_summary">Wähle die System-Akzentfarbe</string>
+    <string name="theme_accent_picker_default">Standard</string>
+    <string name="accent_picker_stock_colors">Stock</string>
+    <string name="accent_picker_custom_colors">Benutzerdefiniert</string>
+    <string name="accent_picker_brand_colors">Marken</string>
+
+    <!-- Dark theme -->
+    <string name="dark_theme_title">Dunkel</string>
+
+    <!-- Fonts -->
+    <string name="font_type_title">Schrifttyp</string>
+    <string name="font_type_summary">Schrifttyp wählen</string>
+    <string name="font_type_default">Standard</string>
+
+    <!-- Adaptive icon shapes -->
+    <string name="adaptive_icon_shape_default">Standard</string>
+    <string name="adaptive_icon_shape_teardrop">Tränenform</string>
+    <string name="adaptive_icon_shape_squircle">Superellipse</string>
+    <string name="adaptive_icon_shape_roundedrect">Abgerundetes Rechteck</string>
+    <string name="adaptive_icon_shape_cylinder">Zylinder</string>
+    <string name="adaptive_icon_shape_hexagon">Sechseck</string>
+    <string name="adaptive_icon_shape_title">Symbolform</string>
+    <string name="adaptive_icon_shape_dialog_title">Symbolform wählen</string>
+
+    <!-- Statusbar icons -->
+    <string name="statusbar_icons_default">Standard</string>
+    <string name="statusbar_icons_filled">Gefüllt</string>
+    <string name="statusbar_icons_rounded">Abgerundet</string>
+    <string name="statusbar_icons_circular">Kreisförmig</string>
+    <string name="statusbar_icons_title">Statusleiste/Schnellkacheln</string>
+    <string name="statusbar_icons_dialog_title">Symbolsatz für Statusleiste wählen</string>
+
+    <!-- Themes -->
+    <string name="theme_type_title">UI-Stil</string>
+    <string name="theme_type_summary">Farbstil wählen</string>
+    <string name="theme_type_light">Hell</string>
+    <string name="theme_type_google_dark">Dunkel</string>
+    <string name="theme_type_pitch_black">Pechschwarz</string>
+    <string name="theme_type_solarized_dark">Solarisiertes Dunkel</string>
+    <string name="theme_other_category_title">Weiteres</string>
+    <string name="theme_backup_title">Aktuellen UI-Stil sichern</string>
+    <string name="theme_backup_summary">Sichere die aktuelle Konfiguration</string>
+    <string name="theme_backup_reach_limit_summary">Sicherungslimit erreicht</string>
+    <string name="theme_restore_title">UI-Stil wiederherstellen</string>
+    <string name="theme_restore_summary">Eine gesicherte Konfiguration wiederherstellen</string>
+    <string name="theme_restore_no_backup_summary">Keine Sicherung verfügbar</string>
+    <string name="theme_restore_popup_title">Wische seitwärts, um weitere Sicherungen anzuzeigen</string>
+    <string name="theme_name_exist_warning">Dieser Sicherungsname ist bereits vorhanden. Gib einen neuen ein.</string>
+    <string name="theme_button_apply_theme">UI-Stil wiederherstellen</string>
+    <string name="theme_button_delete_theme">UI-Stil löschen</string>
+    <string name="theme_switch_restore_theme_color">Hintergrundfarbe</string>
+    <string name="theme_switch_restore_accent_color">Akzentfarbe</string>
+    <string name="theme_switch_restore_font_type">Schrifttyp</string>
+    <string name="theme_switch_restore_adaptative_icons">Adaptive Symbole</string>
+    <string name="theme_switch_restore_sb_icons">Statusleisten-Symbole</string>
+    <string name="theme_switch_restore_wallpaper">Hintergrund</string>
+    <string name="theme_backup_edittext_hint">Sicherung_</string>
+    <string name="theme_backup_dialog_title">Live-Hintergrundbild erkannt</string>
+    <string name="theme_backup_dialog_message">Es scheint, dass Sie ein Live-Hintergrundbild angewendet haben.\n\nBitte beachten Sie, dass Live-Hintergrundbilder nicht gesichert werden. Stattdessen wird das Standard-Hintergrundbild gesichert.</string>
+    <string name="theme_reset_dialog_title">Alle Stiländerungen zurücksetzen</string>
+    <string name="theme_reset_dialog_message">Alle Stiländerungen werden auf die jeweilige Standardeinstellung zurückgesetzt. Der Zeitplan ist davon nicht betroffen.</string>
+    <string name="theme_reset_toast">Stiländerungen auf Standard zurückgesetzt</string>
+
+    <!-- Theme schedule -->
+    <string name="theme_schedule_title">Zeitplan</string>
+    <string name="theme_schedule_summary">Lege einen Zeitplan fest, an dem sich der UI-Stil ändern wird</string>
+    <string name="theme_schedule_dyn_summary">UI-Stil ist geplant</string>
+    <string name="theme_schedule_theme_title">UI-Stil planen</string>
+    <string name="theme_schedule_theme_summary">Zeitplan für UI-Stil wählen</string>
+    <string name="theme_schedule_none">Nicht eingerichtet</string>
+    <string name="theme_schedule_custom_time">Wird zu einer benutzerdefinierten Zeit aktiviert</string>
+    <string name="theme_schedule_applied">UI-Stil wurde aktiviert</string>
+    <string name="theme_schedule_start_scheduled">UI-Stil wird aktiv um</string>
+    <string name="theme_schedule_repeat_title">Zeitplan wiederholen</string>
+    <string name="theme_schedule_repeat_summary">Wiederholt den Zeitplan täglich</string>
+    <string name="theme_schedule_toasts_title">Toast-Nachrichten anzeigen</string>
+    <string name="theme_schedule_toasts_summary">Immer wenn ein geplanter UI-Stil aktiviert wird, erscheint eine Toast-Nachricht</string>
+
+</resources>
+
