@@ -43,8 +43,8 @@
     <string name="font_type_6" translatable="false">Cagliostro</string>
     <string name="font_type_7" translatable="false">Comic Sans</string>
     <string name="font_type_8" translatable="false">Cool Story</string>
-    <string name="font_type_9" translatable="false">Fira Sans</string>
-    <string name="font_type_10" translatable="false">Google Sans</string>
+    <string name="font_type_9" translatable="false">Google Sans</string>
+    <string name="font_type_10" translatable="false">Fira Sans</string>
     <string name="font_type_11" translatable="false">LG Smart Gothic</string>
     <string name="font_type_12" translatable="false">OnePlus Slate</string>
     <string name="font_type_13" translatable="false">Rosemary</string>
