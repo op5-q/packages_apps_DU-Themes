@@ -45,6 +45,7 @@
     <string name="adaptive_icon_shape_roundedrect">Abgerundetes Rechteck</string>
     <string name="adaptive_icon_shape_cylinder">Zylinder</string>
     <string name="adaptive_icon_shape_hexagon">Sechseck</string>
+    <string name="adaptive_icon_shape_square">Rechteck</string>
     <string name="adaptive_icon_shape_title">Symbolform</string>
     <string name="adaptive_icon_shape_dialog_title">Symbolform wählen</string>
 
