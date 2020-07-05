@@ -29,7 +29,7 @@
     <string name="accent_picker_custom_colors">Custom</string>
     <string name="accent_picker_brand_colors">Brand</string>
     <string name="rgb_accent_picker_title">RGB accent picker</string>
-    <string name="rgb_accent_picker_summary">Choose the accent color yourself</string>
+    <string name="rgb_accent_picker_summary">Choose the accent color yourself\n(Not backup-capable)</string>
 
     <!-- Dark theme -->
     <string name="dark_theme_title">Dark theme</string>
