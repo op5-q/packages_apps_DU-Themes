@@ -83,6 +83,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
 
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
     private static final String ACCENT_COLOR_PROP = "persist.sys.theme.accentcolor";
+    private static final String prefix = "hex";
 
     private int mBackupLimit = 10;
     private static boolean mUseSharedPrefListener;
@@ -300,15 +301,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == rgbAccentPicker) {
             int color = (Integer) newValue;
-            String hexColor = String.format("%08X", (0xFFFFFFFF & color));
-            SystemProperties.set(ACCENT_COLOR_PROP, hexColor);
-            mSharedPreferences.edit().remove(PREF_THEME_ACCENT_COLOR);
-            try {
-                 mOverlayManager.reloadAndroidAssets(UserHandle.USER_CURRENT);
-                 mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
-                 mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
-             } catch (RemoteException ignored) {
-             }
+            String hexColor = prefix + String.format("%08X", (0xFFFFFFFF & color));
+            mSharedPreferences.edit().putString("theme_accent_color", hexColor).apply();
             return true;
         }
         return false;
@@ -365,6 +359,26 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         return overlayName;
     }
 
+    private void handleRGBAccentUpdate(String value) {
+        SystemProperties.set(ACCENT_COLOR_PROP, value);
+        try {
+             mOverlayManager.reloadAndroidAssets(UserHandle.USER_CURRENT);
+             mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+             mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+        } catch (RemoteException ignored) {
+        }
+    }
+
+    private void resetRGBAccentColor() {
+        SystemProperties.set(ACCENT_COLOR_PROP, "-1");
+        try {
+             mOverlayManager.reloadAndroidAssets(UserHandle.USER_CURRENT);
+             mOverlayManager.reloadAssets("com.android.settings", UserHandle.USER_CURRENT);
+             mOverlayManager.reloadAssets("com.android.systemui", UserHandle.USER_CURRENT);
+        } catch (RemoteException ignored) {
+        }
+    }
+
     public OnSharedPreferenceChangeListener mSharedPrefListener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(final SharedPreferences sharedPreferences, String key) {
@@ -395,14 +409,18 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             }
 
             if (key.equals(PREF_THEME_ACCENT_COLOR)) {
-                SystemProperties.set(ACCENT_COLOR_PROP, "-1");
                 String accentColor = sharedPreferences.getString(PREF_THEME_ACCENT_COLOR, "default");
                 String overlayName = getOverlayName(ThemesUtils.ACCENTS);
                 if (overlayName != null) {
                     handleOverlays(overlayName, false, mOverlayManager);
                 }
-                if (accentColor != "default") {
+                if (accentColor.startsWith(prefix)) {
+                    handleRGBAccentUpdate(accentColor.substring(prefix.length()));
+                } else if (accentColor != "default") {
+                    SystemProperties.set(ACCENT_COLOR_PROP, "-1");
                     handleOverlays(accentColor, true, mOverlayManager);
+                } else {
+                    resetRGBAccentColor();
                 }
             }
 

@@ -76,8 +76,7 @@ public class AccentPicker extends DialogFragment {
 
         builder.setNeutralButton(mContext.getString(R.string.theme_accent_picker_default), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                mSharedPreferencesEditor.remove("theme_accent_color");
-                mSharedPreferencesEditor.apply();
+                mSharedPreferencesEditor.remove("theme_accent_color").apply();
                 dismiss();
             }
         });
@@ -88,10 +87,11 @@ public class AccentPicker extends DialogFragment {
     }
 
     private void initView() {
-        String colorVal = SystemProperties.get(ACCENT_COLOR_PROP, "-1");
-        if (! "-1".equals(colorVal)) {
-            mSharedPreferencesEditor.remove("theme_accent_color");
-            mSharedPreferencesEditor.apply();
+        String colorVal = mSharedPreferences.getString("theme_accent_color", "hex");
+        final String prefix = "hex";
+        if (colorVal.startsWith(prefix) ) {
+            SystemProperties.set(ACCENT_COLOR_PROP, "-1");
+            mSharedPreferencesEditor.remove("theme_accent_color").apply();
         }
         for (int i = 0; i < mAccentButtons.length; i++) {
             int buttonId = getResources().getIdentifier(mAccentButtons[i], "id", mContext.getPackageName());
